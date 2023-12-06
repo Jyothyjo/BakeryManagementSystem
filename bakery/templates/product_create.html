@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Product</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Product</h1>
+        <form method="post" action="{% url 'product_create' %}" novalidate>
+            {% csrf_token %}
+            <!-- Replace these input fields with the respective form fields from your Product model -->
+            <input type="text" name="name" placeholder="Product Name" required>
+            <input type="number" name="price" placeholder="Price" required>
+            <input type="number" name="quantity" placeholder="Quantity" required>
+            <!-- Add more input fields as needed -->
+            <button type="submit">Save</button>
+            <a href="{% url 'product_list' %}" class="link-button">Cancel</a>
+        </form>
+       
+    </div>
+</body>
+</html>

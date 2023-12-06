@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Detail</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="order-details">
+        <h1>Employee Detail</h1>
+        <p>Name: {{ employee.name }}</p>
+        <p>Position: {{ employee.position }}</p>
+		<p>Salary: {{ employee.salary }}</p>
+        <!-- Add more details as needed -->
+        
+        <div class="delete-form">
+            <form method="post" action="{% url 'employee_delete' employee.id %}">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+            <a href="{% url 'employee_list' %}" class="link-button">Back</a>
+        </div>
+    </div>
+</body>
+</html>

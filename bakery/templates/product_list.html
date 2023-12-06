@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Product List</h1>
+        <ul class="product-list">
+            {% for product in products %}
+                <li class="product-item">
+                    <span class="product-name">{{ product.name }}</span>
+                    <a href="{% url 'product_update' product.id %}" class="update-button">Update</a>
+                    <a href="{% url 'product_view' product.id %}">View</a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if back_to_dashboard %}
+            <a href="{% url 'dashboard_view' %}" class="link-button">Back</a>
+        {% endif %}
+        <a href="{% url 'product_create' %}" class="link-button" >Add</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Item Detail</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="order-details">
+        <h2>Order Item Detail</h2>
+        <p>Order: {{ item.order.customer.name }}</p>
+        <p>Product: {{ item.product.name }}</p>
+        <p>Quantity: {{ item.quantity }}</p>
+         <div class="delete-form">
+            <a href="{% url 'orderitem_list' %}" class="link-button">Back </a>
+            <a href="{% url 'orderitem_update' item.id %}">Update</a>
+            <a href="{% url 'orderitem_delete' item.id %}">Delete</a>
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer List</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer List</h1>
+
+        <ul class="employee-list">
+            {% for customer in customers %}
+            <li class="employee-item">
+                <span class="employee-name">{{ customer.name }}</span>
+                <a href="{% url 'customer_view' customer.id %}">View</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% if back_to_dashboard %}
+            <a href="{% url 'dashboard_view' %}" class="link-button">Back</a>
+        {% endif %}
+        <a href="{% url 'customer_create' %}" class="link-button">Add</a> <!-- Changed text to match 'employee_list.html' -->
+    </div>
+</body>
+</html>

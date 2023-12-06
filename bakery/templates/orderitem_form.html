@@ -1,0 +1,33 @@
+<!-- orderitem_form.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Item Form</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h2>{% block form_heading %}{% endblock %}</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <select name="order" id="id_order" class="uniform-input" placeholder="Order">
+            {% for order_choice_id, order_choice_name in form.fields.order.choices %}
+                <option value="{{ order_choice_id }}">{{ order_choice_name }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <select name="product" id="id_product" class="uniform-input" placeholder="Product">
+            {% for product_choice_id, product_choice_name in form.fields.product.choices %}
+                <option value="{{ product_choice_id }}">{{ product_choice_name }}</option>
+            {% endfor %}
+        </select><br><br>
+        
+        <input type="number" name="quantity" class="uniform-input" placeholder="Quantity"><br><br>
+
+        <button type="submit">{% block form_button %}Create{% endblock %}</button>
+        <a href="{% url 'orderitem_list' %}" class="link-button">Cancel</a>
+    </form>
+</body>
+</html>

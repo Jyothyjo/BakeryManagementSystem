@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Dashboard</title>
+	<link rel="stylesheet" href="{% static 'styles.css' %}">
+    <!-- Include any necessary CSS or stylesheets -->
+</head>
+<body>
+	<div class="dashboard-header">
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+	<div class="dashboard">
+    	<div class="dashboard-links">
+			<div class="dashboard-link">
+				<a href="{% url 'customer_list' %}">Customers</a>
+			</div>
+			<div class="dashboard-link">
+				<a href="{% url 'employee_list' %}">Employees</a>
+			</div>
+			<div class="dashboard-link">
+				<a href="{% url 'product_list' %}">Products</a>
+			</div>
+			<div class="dashboard-link">
+				<a href="{% url 'inventoryitem_list' %}">Inventory Items</a>
+			</div>
+			<div class="dashboard-link">
+				<a href="{% url 'orderitem_list' %}">Order Items</a>
+			</div>
+			<div class="dashboard-link">
+				<a href="{% url 'order_list' %}">Orders</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

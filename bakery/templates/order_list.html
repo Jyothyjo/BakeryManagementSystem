@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order List</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <!-- Include any necessary CSS or stylesheets -->
+</head>
+<body>
+    <div class="container">
+        <h1>Order List</h1>
+        <ul class="employee-list">
+            {% for order in orders %}
+                <li class="employee-item">
+                    <span class="employee-name">{{ order.customer.name }}</span>
+                    <a href="{% url 'order_detail' order.id %}">View</a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if back_to_dashboard %}
+            <a href="{% url 'dashboard_view' %}"  class="link-button">Back</a>
+        {% endif %}
+        <a href="{% url 'order_create' %}" class="link-button">Create</a>
+    </div>
+</body>
+</html>

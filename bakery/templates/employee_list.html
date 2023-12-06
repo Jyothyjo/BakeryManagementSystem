@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee List</h1>
+        <ul class="employee-list">
+            {% for employee in employees %}
+            <li class="employee-item">
+                <span class="employee-name">{{ employee.name }}</span>
+                <a href="{% url 'employee_detail' employee.id %}">View</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% if back_to_dashboard %}
+            <a href="{% url 'dashboard_view' %}" class="link-button" >Back</a>
+        {% endif %}
+        <a href="{% url 'employee_create' %}" class="link-button">Add</a>
+    </div>
+</body>
+</html>

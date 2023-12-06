@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Item Details</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="order-details">
+        <h1>Inventory Item Details</h1>
+        <div class="inventoryitem-details">
+            <p>Product: {{ product_name }}</p>
+            <p>ID: {{ item.id }}</p>
+            <p>Quantity: {{ item.quantity }}</p>
+            <p>Expiry: {{ item.expiry_date }}</p>
+            <!-- Add more details as needed -->
+        </div>
+        
+		<div class="delete-form">
+            <form method="post" action="{% url 'inventoryitem_delete' item.id %}">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+            <a href="{% url 'inventoryitem_list' %}" class="link-button">Back</a>
+        </div>
+	</div>
+</body>
+</html>

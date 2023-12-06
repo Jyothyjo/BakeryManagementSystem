@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Item List</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory Item List</h1>
+        <ul class="employee-list">
+            {% for item, product_name in items_with_names %}
+                <li class="employee-item">
+                    <span class="employee-name">{{ product_name }}</span>
+                    <a href="{% url 'inventoryitem_view' item.id %}">View</a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if back_to_dashboard %}
+            <a href="{% url 'dashboard_view' %}"  class="link-button">Back</a>
+        {% endif %}
+        <a href="{% url 'inventoryitem_create' %}" class="link-button">Add </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- customer_create.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Customer</title>
+    <!-- Your CSS or static file links -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create New Customer</h1>
+        <form method="post" action="{% url 'customer_create' %}" novalidate>
+            {% csrf_token %}
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            <input type="text" id="name" name="name" placeholder="Name" required><br><br>
+            <input type="email" id="email" name="email"placeholder="E-mail" required><br><br>
+            <input type="text" id="phone" name="phone"placeholder="Phone" required><br><br>
+            <button type="submit">Create</button>
+            <a href="{% url 'customer_list' %}" class="link-button">Cancel</a>
+        </form>
+        
+    </div>
+</body>
+</html>

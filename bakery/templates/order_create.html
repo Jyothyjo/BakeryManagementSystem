@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New Order</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create New Order</h1>
+        <form class="order-form" method="post">
+            {% csrf_token %}
+            <!-- Use placeholders instead of labels -->
+            <input type="date" name="order_date" placeholder="Order Date"><br><br>
+            <input type="text" name="customer" placeholder="Customer"><br><br>
+    
+            <button type="submit">Create Order</button>
+            <a href="{% url 'order_list' %}" class="link-button">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

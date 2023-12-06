@@ -1,0 +1,26 @@
+<!-- customer_view.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="order-details">
+        <h1>Customer Details</h1>
+        <p>Name: {{ customer.name }}</p>
+        <p>Email: {{ customer.email }}</p>
+        <p>Phone: {{ customer.phone }}</p>
+
+        <div class = "delete-form">
+            <form method="post" action="{% url 'customer_delete' customer.id %}">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+            <a href="{% url 'customer_list' %}" class="link-button">Back</a>
+        </div>
+    </div>
+</body>
+</html>

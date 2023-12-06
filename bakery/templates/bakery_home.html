@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <h1>Login</h1>
+            <form method="post" action="{% url 'bakery_home' %}" class="login-form">
+                {% csrf_token %}
+                {{ form.as_p }}  <!-- Make sure you have this line -->
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

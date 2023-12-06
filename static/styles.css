@@ -1,0 +1,546 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient( rgba(26, 25, 25, 0.5), rgba(0, 0, 0, 0.5) ), url('/static/admin/img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+h1, h2 {
+    color: #c89262;
+    
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    padding: 10px 16px;
+}
+a.link-button {
+    margin-right: 20px; 
+    
+}
+
+a:hover {
+    color: #a15d98;
+}
+
+/* Form Styles */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #a07b4e;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.7s ease;
+}
+
+button:hover {
+    background-color: #a15d98;
+}
+
+/* Header */
+header {
+    background-color: #c19a6b;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #c19a6b;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.employee-list {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.employee-item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fce8dc; /* Light pink background */
+}
+
+.employee-item a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #c19a6b; /* Brown button background */
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px; /* Add margin to the left of the button */
+}
+
+.employee-item a:first-child {
+    margin-left: 0; /* Remove left margin from the first button */
+}
+
+.employee-item a:hover {
+    background-color: #a15d98; /* Dark pink hover */
+}
+
+/* Employee Detail, Form, Delete Confirmation Styles */
+.employee-details,
+.employee-form,
+
+.employee-form input[type="text"],
+.employee-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.employee-form button[type="submit"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #c19a6b; /* Brown button background */
+    color: #fff;
+    cursor: pointer;
+}
+
+.employee-form button[type="submit"]:hover {
+    background-color: #a15d98; /* Dark pink hover */
+}
+
+/* styles.css */
+
+/* Product List Styles */
+.product-list {
+    padding: 10;
+    margin: 10;
+    list-style: none;
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #fce8dc; /* Light pink background */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.product-item .product-name {
+    margin-right: auto; /* Pushes the product name to the opposite side */
+}
+.product-item .update-button {
+    order: 1; /* Change the order of the button */
+    margin-left: 3px; /* Adjust margin if needed */
+}
+.product-item a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #c19a6b; /* Brown button background */
+    padding: 5px 8px; /* Adjust padding to move the buttons closer */
+    border-radius: 3px;
+}
+
+.product-item a:hover {
+    background-color: #a15d98; /* Dark pink hover */
+}
+
+
+/* Product Detail, Form, Delete Confirmation Styles */
+.product-details,
+.product-form,
+/* Product Form Input Styles */
+.product-form input[type="text"],
+.product-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.product-form button[type="submit"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #c19a6b; /* Brown button background */
+    color: #fff;
+    cursor: pointer;
+}
+
+.product-form button[type="submit"]:hover {
+    background-color: #a15d98; /* Dark pink hover */
+}
+
+/* Reset default padding and margin for the list */
+.customer-list {
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual customer item styles */
+.customer-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fce8dc; /* Light pink background */
+}
+
+/* Styles for links within customer items */
+.customer-item a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #c19a6b; /* Brown button background */
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* Hover effect for links within customer items */
+.customer-item a:hover {
+    background-color: #a15d98; /* Dark pink hover */
+}
+
+/* Styles for customer details, forms, and delete confirmation */
+.customer-details,
+.customer-form,
+.customer-confirm-delete {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fce8dc; /* Light pink background */
+}
+
+/* Styles for inputs within the customer form */
+.customer-form input[type="text"],
+.customer-form input[type="email"],
+.customer-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input:required:invalid {
+    color: transparent;
+  }
+/* Styles for submit button within the customer form */
+.customer-form button[type="submit"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #c19a6b; /* Brown button background */
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Hover effect for the submit button */
+.customer-form button[type="submit"]:hover {
+    background-color: #a15d98; /* Dark pink hover */
+}
+
+/* styles.css */
+/* Order Detail, Form, Delete Confirmation Styles */
+.order-details {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: rgba(252, 232, 220, 0.922); /* Light pink background */
+    width: 400px; /* Fixed width */
+    position: relative; /* Required for positioning the buttons */
+    margin: auto; /* Center align the container */
+}
+
+.delete-form {
+    margin-top: 20px; /* Add space between the buttons */
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-form button {
+    background-color: #c19a6b; /* Brown button background */
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-form a {
+    background-color: #a15d98; /* Background color for "Back to Order List" */
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+/* Order Form Input Styles */
+/* Order Form Input Styles */
+.order-form input[type="date"],
+.order-form input[type="text"],
+.order-form button[type="submit"],
+.order-form a.link-button {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.order-form button[type="submit"],
+.order-form a.link-button {
+    background-color: #c19a6b;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    width:  100px;
+    height: 35px;
+    border-radius: 4px;
+}
+
+.order-form button[type="submit"]:hover,
+.order-form a.link-button:hover {
+    background-color: #a15d98;
+}
+
+/* Order Item List Styles */
+.order-item-list {
+    padding: 0;
+    margin: 0;
+}
+
+.order-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fce8dc; /* Light pink background */
+}
+
+/* Order Item Detail, Form, Delete Confirmation Styles */
+.order-item-details,
+.order-item-form,
+.order-item-confirm-delete {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fce8dc; /* Light pink background */
+}
+
+/* Order Item Form Input Styles */
+.uniform-input {
+    width: calc(100% - 22px); /* Adjusted width to accommodate padding and border */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+}
+
+button[type="submit"],
+.link-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #c19a6b;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.link-button {
+    background-color: #986a50;
+}
+
+button[type="submit"]:hover,
+.link-button:hover {
+    background-color: #a15d98;
+}
+/* Inventory Item List Styles */
+.inventory-item-list {
+    padding: 0;
+    margin: 0;
+}
+
+.inventory-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fce8dc; /* Light pink background */
+}
+
+/* Inventory Item Detail, Form, Delete Confirmation Styles */
+.inventory-item-details,
+.inventory-item-form,
+.inventory-item-confirm-delete {
+ 
+    padding: 20px;
+    margin-bottom: 20px;
+     /* Light pink background */
+}
+
+/* Inventory Item Form Input Styles */
+.inventory-item-form input[type="text"],
+.inventory-item-form input[type="number"],
+.inventory-item-form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.inventory-item-form button[type="submit"] {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #c19a6b; /* Brown button background */
+    color: #fff;
+    cursor: pointer;
+}
+
+.inventory-item-form button[type="submit"]:hover {
+    background-color: #a15d98; /* Dark pink hover */
+}
+
+
+.container {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+.login-container {
+    margin-top: 150px; /* Adjust the distance from the "Welcome" section */
+    background-color: rgba(255, 255, 255, 0.859);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container button {
+    /* Your styles for inputs and buttons within the login container */
+    width: 250px;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 20px;
+    background-color: rgba(186, 80, 80, 0.525) 255, 255, 0.302;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+.dashboard-header form {
+    position:fixed;
+   right:25px;
+   top:25px;
+
+}
+
+.dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff58;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    align-items: center;
+}
+
+.dashboard-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.dashboard-link {
+    width: 250px;
+    padding: 30px;
+    background-color: #ece2e2d8;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.dashboard-link a {
+    text-transform: uppercase;
+    color: rgb(145, 83, 40);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.dashboard-link a:hover {
+    text-decoration: underline;
+}

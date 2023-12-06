@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Inventory Item</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Inventory Item</h1>
+        <form method="post" action="{% url 'inventoryitem_create' %}" novalidate>
+            {% csrf_token %}
+            <!-- Replace these input fields with the respective form fields from your InventoryItem model -->
+            <input type="text" name="product" placeholder="Product Name" required>
+            <input type="number" name="quantity" placeholder="Quantity" required>
+            <input type="date" name="expiry_date" placeholder="Expiry Date" required>
+            <!-- Add more input fields as needed -->
+            <button type="submit">Create</button>
+            <a href="{% url 'inventoryitem_list' %}" class="link-button">Cancel</a>
+        </form>
+        
+    </div>
+</body>
+</html>

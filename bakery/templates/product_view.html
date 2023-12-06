@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="order-details">
+        <h1>Product Details</h1>
+        <div class="product-details">
+            <p>Name: {{ product.name }}</p>
+            <p>Price: ${{ product.price }}</p>
+            <p>Quantity: {{ product.quantity }}</p>
+            
+        </div>
+        
+		
+		<div class="delete-form">
+            <form method="post" action="{% url 'product_delete' product.id %}">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+            <a href="{% url 'product_list' %}" class="link-button">Back</a>
+        </div>
+	</div>
+</body>
+</html>

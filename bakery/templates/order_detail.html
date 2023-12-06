@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Details</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <!-- Include any necessary CSS or stylesheets -->
+</head>
+<body>
+    <div class="order-details">
+        <h1>Order Details</h1>
+        <p>Customer: {{ order.customer.name }}</p>
+        <p>Date: {{ order.order_date }}</p>
+        <p>Customer ID: {{ order.customer.id }}</p>
+        <div class="delete-form">
+            <form method="post" action="{% url 'order_delete' order.id %}">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+            <a href="{% url 'order_list' %}" class="link-button">Back</a>
+        </div>
+    </div>
+</body>
+</html>
